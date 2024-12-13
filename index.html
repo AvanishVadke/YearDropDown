@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering year App by Avanish</title>
+  </head>
+  <style>
+    * {
+      color: aliceblue;
+      font-size: 40px;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    }
+    body {
+      background-color: black;
+    }
+    div {
+      background-color: blueviolet;
+      width: 60%;
+      padding-bottom: 10px;
+      border-radius: 20px;
+    }
+    .btn {
+      background-color: rgb(255, 170, 0);
+      border-radius: 20px;
+    }
+    .btn:hover {
+      background-color: limegreen;
+    }
+    option {
+      color: black;
+    }
+  </style>
+  <body>
+    <center>
+      <div>
+        <h1>Select your year!</h1>
+        <form onsubmit="choice(event)">
+          <label>Input your name</label>
+          <br />
+          <input type="text" placeholder="Enter your name" id="name" />
+          <br /><br />
+          <label>Select one of the following</label>
+          <br />
+          <select name="dropdown" id="dropdown" style="color: black">
+            <option value="FE">FE</option>
+            <option value="SE">SE</option>
+            <option value="TE">TE</option>
+            <option value="BE">BE</option>
+          </select>
+          <br /><br />
+          <input type="submit" class="btn" />
+          <br />
+        </form>
+        <h2 id="msg"></h2>
+      </div>
+      <script>
+        function choice(event) {
+          event.preventDefault();
+          let name = document.getElementById("name").value;
+          let year = document.getElementById("dropdown").value;
+
+          if (name.trim() === "") {
+            alert("Please enter your name!");
+            return;
+          }
+
+          let ans = "Name: " + name + ", Year: " + year;
+          document.getElementById("msg").innerHTML = ans;
+        }
+      </script>
+    </center>
+  </body>
+</html>
